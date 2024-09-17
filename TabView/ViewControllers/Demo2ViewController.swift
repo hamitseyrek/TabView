@@ -8,7 +8,7 @@
 import UIKit
 
 class Demo2ViewController: UIViewController {
-
+    var pageIndex: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -13,6 +13,14 @@
 		5EE1F1E92C98290200A040D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F1E82C98290200A040D9 /* Base */; };
 		5EE1F1F22C98299400A040D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1F02C98299400A040D9 /* HomeViewController.swift */; };
 		5EE1F1F32C98299400A040D9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F1F12C98299400A040D9 /* HomeViewController.xib */; };
+		5EE1F1F62C982AB200A040D9 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1F52C982AB200A040D9 /* TabsView.swift */; };
+		5EE1F1F92C982AF900A040D9 /* TabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1F82C982AF900A040D9 /* TabCell.swift */; };
+		5EE1F1FD2C983DA600A040D9 /* Demo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1FB2C983DA600A040D9 /* Demo1ViewController.swift */; };
+		5EE1F1FE2C983DA600A040D9 /* Demo1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F1FC2C983DA600A040D9 /* Demo1ViewController.xib */; };
+		5EE1F2012C983DB300A040D9 /* Demo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1FF2C983DB300A040D9 /* Demo2ViewController.swift */; };
+		5EE1F2022C983DB300A040D9 /* Demo2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F2002C983DB300A040D9 /* Demo2ViewController.xib */; };
+		5EE1F2052C983DBD00A040D9 /* Demo3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F2032C983DBD00A040D9 /* Demo3ViewController.swift */; };
+		5EE1F2062C983DBD00A040D9 /* Demo3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F2042C983DBD00A040D9 /* Demo3ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		5EE1F1EA2C98290200A040D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EE1F1F02C98299400A040D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5EE1F1F12C98299400A040D9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		5EE1F1F52C982AB200A040D9 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		5EE1F1F82C982AF900A040D9 /* TabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCell.swift; sourceTree = "<group>"; };
+		5EE1F1FB2C983DA600A040D9 /* Demo1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo1ViewController.swift; sourceTree = "<group>"; };
+		5EE1F1FC2C983DA600A040D9 /* Demo1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Demo1ViewController.xib; sourceTree = "<group>"; };
+		5EE1F1FF2C983DB300A040D9 /* Demo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo2ViewController.swift; sourceTree = "<group>"; };
+		5EE1F2002C983DB300A040D9 /* Demo2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Demo2ViewController.xib; sourceTree = "<group>"; };
+		5EE1F2032C983DBD00A040D9 /* Demo3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo3ViewController.swift; sourceTree = "<group>"; };
+		5EE1F2042C983DBD00A040D9 /* Demo3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Demo3ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,8 @@
 		5EE1F1DB2C98290100A040D9 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
+				5EE1F1FA2C983D8A00A040D9 /* ViewControllers */,
+				5EE1F1F42C982A9700A040D9 /* Components */,
 				5EE1F1DC2C98290100A040D9 /* AppDelegate.swift */,
 				5EE1F1DE2C98290200A040D9 /* SceneDelegate.swift */,
 				5EE1F1F02C98299400A040D9 /* HomeViewController.swift */,
@@ -65,6 +83,36 @@
 				5EE1F1EA2C98290200A040D9 /* Info.plist */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		5EE1F1F42C982A9700A040D9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1F1F52C982AB200A040D9 /* TabsView.swift */,
+				5EE1F1F72C982AEA00A040D9 /* TabCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5EE1F1F72C982AEA00A040D9 /* TabCell */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1F1F82C982AF900A040D9 /* TabCell.swift */,
+			);
+			path = TabCell;
+			sourceTree = "<group>";
+		};
+		5EE1F1FA2C983D8A00A040D9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1F1FB2C983DA600A040D9 /* Demo1ViewController.swift */,
+				5EE1F1FF2C983DB300A040D9 /* Demo2ViewController.swift */,
+				5EE1F2032C983DBD00A040D9 /* Demo3ViewController.swift */,
+				5EE1F2042C983DBD00A040D9 /* Demo3ViewController.xib */,
+				5EE1F2002C983DB300A040D9 /* Demo2ViewController.xib */,
+				5EE1F1FC2C983DA600A040D9 /* Demo1ViewController.xib */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EE1F1E62C98290200A040D9 /* Assets.xcassets in Resources */,
+				5EE1F1FE2C983DA600A040D9 /* Demo1ViewController.xib in Resources */,
 				5EE1F1E92C98290200A040D9 /* Base in Resources */,
 				5EE1F1F32C98299400A040D9 /* HomeViewController.xib in Resources */,
+				5EE1F2022C983DB300A040D9 /* Demo2ViewController.xib in Resources */,
+				5EE1F2062C983DBD00A040D9 /* Demo3ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE1F2012C983DB300A040D9 /* Demo2ViewController.swift in Sources */,
 				5EE1F1DD2C98290100A040D9 /* AppDelegate.swift in Sources */,
 				5EE1F1DF2C98290200A040D9 /* SceneDelegate.swift in Sources */,
+				5EE1F2052C983DBD00A040D9 /* Demo3ViewController.swift in Sources */,
+				5EE1F1F92C982AF900A040D9 /* TabCell.swift in Sources */,
+				5EE1F1FD2C983DA600A040D9 /* Demo1ViewController.swift in Sources */,
+				5EE1F1F62C982AB200A040D9 /* TabsView.swift in Sources */,
 				5EE1F1F22C98299400A040D9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
