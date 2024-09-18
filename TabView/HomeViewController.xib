@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TabView" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="59M-LE-TSl" id="qEF-3I-qjg"/>
                 <outlet property="tabsView" destination="RKf-Vf-xEf" id="2Vk-ws-4Y0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,12 +28,26 @@
                         <constraint firstAttribute="height" constant="41" id="hAY-6e-ksG"/>
                     </constraints>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="59M-LE-TSl">
+                    <rect key="frame" x="0.0" y="108" width="393" height="744"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kTE-hN-hIf">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="59M-LE-TSl" firstAttribute="top" secondItem="RKf-Vf-xEf" secondAttribute="bottom" constant="8" id="4BU-w2-Hkg"/>
                 <constraint firstItem="RKf-Vf-xEf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="63V-LS-YM1"/>
+                <constraint firstItem="59M-LE-TSl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HXd-Ls-0NA"/>
+                <constraint firstAttribute="bottom" secondItem="59M-LE-TSl" secondAttribute="bottom" id="HcN-F3-NmI"/>
                 <constraint firstItem="RKf-Vf-xEf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="TdS-fE-4Ey"/>
+                <constraint firstItem="59M-LE-TSl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jSM-2Q-bvj"/>
                 <constraint firstItem="RKf-Vf-xEf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ncJ-fp-Ef2"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
@@ -41,6 +56,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

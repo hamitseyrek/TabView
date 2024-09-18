@@ -1,50 +1,32 @@
-//
-//  HomeViewController.swift
-//  TabView
-//
-//  Created by Hamit Seyrek on 16.09.2024.
-//
-
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     @IBOutlet weak var tabsView: TabsView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var currentIndex: Int = 0
-    
-    var pageController: UIPageViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTabs()
-        
-        setupPageViewController()
+        setupCollectionView()
     }
     
-    func setupPageViewController() {
-        // PageViewController
-        self.pageController = UIPageViewController()
+    func setupCollectionView() {
+        // Configure collection view layout
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 0
+            layout.sectionInset = .zero
+        }
         
-        self.addChild(self.pageController)
-        self.view.addSubview(self.pageController.view)
-        
-        // Set PageViewController Delegate & DataSource
-        pageController.delegate = self
-        pageController.dataSource = self
-        
-        // Set the selected ViewController in the PageViewController when the app starts
-        pageController.setViewControllers([showViewController(0)!], direction: .forward, animated: true, completion: nil)
-        
-        // PageViewController Constraints
-        self.pageController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.pageController.view.topAnchor.constraint(equalTo: self.tabsView.bottomAnchor),
-            self.pageController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.pageController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.pageController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
-        self.pageController.didMove(toParent: self)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
     }
     
     func setupTabs() {
@@ -59,7 +41,6 @@ class HomeViewController: UIViewController {
         tabsView.tabMode = .fixed
         
         // TabView Customization
-        // TabView Customization
         tabsView.titleColor = .white
         tabsView.iconColor = .white
         tabsView.indicatorColor = .white
@@ -72,13 +53,64 @@ class HomeViewController: UIViewController {
         // Set the selected Tab when the app starts
         tabsView.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
     }
+    
+    // UICollectionView DataSource Methods
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tabsView.tabs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        
+        // Clear previous content
+        cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+        
+        let viewController = showViewController(indexPath.item)!
+        self.addChild(viewController)
+        viewController.view.frame = cell.contentView.bounds
+        cell.contentView.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+        
+        return cell
+    }
+    
+    // UICollectionViewDelegateFlowLayout Methods
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Make cell size equal to collection view's bounds size
+        return collectionView.bounds.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentIndex = indexPath.item
+        tabsView.collectionView.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredVertically)
+        collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == collectionView {
+            let offsetX = scrollView.contentOffset.x
+            let pageWidth = scrollView.frame.size.width
+            let pageIndex = round(offsetX / pageWidth)
+            
+            // Ensure index is within bounds
+            let index = max(0, min(Int(pageIndex), tabsView.tabs.count - 1))
+            
+            if currentIndex != index {
+                currentIndex = index
+                tabsView.collectionView.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredVertically)
+            }
+        }
+    }
+    
     // Show ViewController for the current position
     func showViewController(_ index: Int) -> UIViewController? {
-        if (self.tabsView.tabs.count == 0) || (index >= self.tabsView.tabs.count) {
+        if index >= tabsView.tabs.count {
             return nil
         }
-        
-        currentIndex = index
         
         if index == 0 {
             let contentVC = Demo1ViewController()
@@ -98,77 +130,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: TabsDelegate {
     func tabsViewDidSelectItemAt(position: Int) {
-        // Check if the selected tab cell position is the same with the current position in pageController, if not, then go forward or backward
         if position != currentIndex {
-            if position > currentIndex {
-                self.pageController.setViewControllers([showViewController(position)!], direction: .forward, animated: false, completion: nil)
-            } else {
-                self.pageController.setViewControllers([showViewController(position)!], direction: .reverse, animated: false, completion: nil)
-            }
-            tabsView.collectionView.scrollToItem(at: IndexPath(item: position, section: 0), at: .centeredHorizontally, animated: false)
-        }
-    }
-}
-
-extension HomeViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    // return ViewController when go forward
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let vc = pageViewController.viewControllers?.first
-        var index: Int
-        index = getVCPageIndex(vc)
-        // Don't do anything when viewpager reach the number of tabs
-        if index == tabsView.tabs.count {
-            return nil
-        } else {
-            index += 1
-            return self.showViewController(index)
-        }
-    }
-    
-    // return ViewController when go backward
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let vc = pageViewController.viewControllers?.first
-        var index: Int
-        index = getVCPageIndex(vc)
-        
-        if index == 0 {
-            return nil
-        } else {
-            index -= 1
-            return self.showViewController(index)
-        }
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if finished {
-            if completed {
-                guard let vc = pageViewController.viewControllers?.first else { return }
-                let index: Int
-                
-                index = getVCPageIndex(vc)
-                
-                tabsView.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredVertically)
-                // Animate the tab in the TabsView to be centered when you are scrolling using .scrollable
-                tabsView.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
-            }
-        }
-    }
-    
-    // Return the current position that is saved in the UIViewControllers we have in the UIPageViewController
-    func getVCPageIndex(_ viewController: UIViewController?) -> Int {
-        switch viewController {
-        case is Demo1ViewController:
-            let vc = viewController as! Demo1ViewController
-            return vc.pageIndex
-        case is Demo2ViewController:
-            let vc = viewController as! Demo2ViewController
-            return vc.pageIndex
-        case is Demo3ViewController:
-            let vc = viewController as! Demo3ViewController
-            return vc.pageIndex
-        default:
-            let vc = viewController as! Demo1ViewController
-            return vc.pageIndex
+            currentIndex = position
+            tabsView.collectionView.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredVertically)
+            collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
         }
     }
 }
