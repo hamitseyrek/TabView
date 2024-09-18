@@ -40,6 +40,7 @@ class V2ViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            
             topTabBar.collectionView.delegate = self
 //            view.addSubview(topTabBar)
 //            view.addSubview(basicView)

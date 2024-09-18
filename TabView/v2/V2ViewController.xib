@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="V2ViewController" customModule="TabView" customModuleProvider="target">
             <connections>
-                <outlet property="basicView" destination="NBx-CO-NGw" id="SCZ-6T-D4x"/>
+                <outlet property="basicView" destination="NBx-CO-NGw" id="qhZ-1b-f9J"/>
                 <outlet property="topTabBar" destination="Spw-P6-oqx" id="e9B-Ly-xZq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

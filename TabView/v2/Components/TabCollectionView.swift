@@ -11,7 +11,7 @@ class TabCollectionView: UIView {
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.isPagingEnabled = true
+        collectionView.isPagingEnabled = false
         
         return collectionView
     }()
@@ -36,8 +36,6 @@ class TabCollectionView: UIView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    
-
     
         private func setLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
