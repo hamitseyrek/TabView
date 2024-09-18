@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E9FAFB12C99B147008994B8 /* V2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFAF2C99B147008994B8 /* V2ViewController.swift */; };
+		5E9FAFB22C99B147008994B8 /* V2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FAFB02C99B147008994B8 /* V2ViewController.xib */; };
+		5E9FAFB52C99B164008994B8 /* TabCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFB42C99B164008994B8 /* TabCollectionView.swift */; };
+		5E9FAFB72C99B190008994B8 /* TabLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFB62C99B190008994B8 /* TabLabelCell.swift */; };
 		5EE1F1DD2C98290100A040D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1DC2C98290100A040D9 /* AppDelegate.swift */; };
 		5EE1F1DF2C98290200A040D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1DE2C98290200A040D9 /* SceneDelegate.swift */; };
 		5EE1F1E62C98290200A040D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F1E52C98290200A040D9 /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E9FAFAF2C99B147008994B8 /* V2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2ViewController.swift; sourceTree = "<group>"; };
+		5E9FAFB02C99B147008994B8 /* V2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = V2ViewController.xib; sourceTree = "<group>"; };
+		5E9FAFB42C99B164008994B8 /* TabCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionView.swift; sourceTree = "<group>"; };
+		5E9FAFB62C99B190008994B8 /* TabLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLabelCell.swift; sourceTree = "<group>"; };
 		5EE1F1D92C98290100A040D9 /* TabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE1F1DC2C98290100A040D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE1F1DE2C98290200A040D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E9FAFAE2C99B12E008994B8 /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FAFB32C99B14B008994B8 /* Components */,
+				5E9FAFAF2C99B147008994B8 /* V2ViewController.swift */,
+				5E9FAFB02C99B147008994B8 /* V2ViewController.xib */,
+			);
+			path = v2;
+			sourceTree = "<group>";
+		};
+		5E9FAFB32C99B14B008994B8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FAFB42C99B164008994B8 /* TabCollectionView.swift */,
+				5E9FAFB62C99B190008994B8 /* TabLabelCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5EE1F1D02C98290100A040D9 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +99,7 @@
 		5EE1F1DB2C98290100A040D9 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
+				5E9FAFAE2C99B12E008994B8 /* v2 */,
 				5EE1F1FA2C983D8A00A040D9 /* ViewControllers */,
 				5EE1F1F42C982A9700A040D9 /* Components */,
 				5EE1F1DC2C98290100A040D9 /* AppDelegate.swift */,
@@ -178,6 +206,7 @@
 				5EE1F1E92C98290200A040D9 /* Base in Resources */,
 				5EE1F1F32C98299400A040D9 /* HomeViewController.xib in Resources */,
 				5EE1F2022C983DB300A040D9 /* Demo2ViewController.xib in Resources */,
+				5E9FAFB22C99B147008994B8 /* V2ViewController.xib in Resources */,
 				5EE1F2062C983DBD00A040D9 /* Demo3ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E9FAFB12C99B147008994B8 /* V2ViewController.swift in Sources */,
+				5E9FAFB72C99B190008994B8 /* TabLabelCell.swift in Sources */,
 				5EE1F2012C983DB300A040D9 /* Demo2ViewController.swift in Sources */,
 				5EE1F1DD2C98290100A040D9 /* AppDelegate.swift in Sources */,
 				5EE1F1DF2C98290200A040D9 /* SceneDelegate.swift in Sources */,
@@ -196,6 +227,7 @@
 				5EE1F1F92C982AF900A040D9 /* TabCell.swift in Sources */,
 				5EE1F1FD2C983DA600A040D9 /* Demo1ViewController.swift in Sources */,
 				5EE1F1F62C982AB200A040D9 /* TabsView.swift in Sources */,
+				5E9FAFB52C99B164008994B8 /* TabCollectionView.swift in Sources */,
 				5EE1F1F22C98299400A040D9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +380,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +409,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
