@@ -102,7 +102,7 @@ extension TabsView: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.tabViewModel = Tab(icon: tabs[indexPath.item].icon, title: tabs[indexPath.item].title)
-        
+        print(#function,"***** HSsc 002 ", cell.tabViewModel?.title)
         // Change Icon Color
         cell.tabIcon.image = cell.tabIcon.image?.withRenderingMode(.alwaysTemplate)
         cell.tabIcon.tintColor = iconColor
@@ -115,6 +115,7 @@ extension TabsView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(#function,"***** HSsc 003 ", Tab(icon: tabs[indexPath.item].icon, title: tabs[indexPath.item].title).title)
         delegate?.tabsViewDidSelectItemAt(position: indexPath.item)
     }
 }

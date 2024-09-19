@@ -11,6 +11,11 @@
 		5E9FAFB22C99B147008994B8 /* V2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FAFB02C99B147008994B8 /* V2ViewController.xib */; };
 		5E9FAFB52C99B164008994B8 /* TabCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFB42C99B164008994B8 /* TabCollectionView.swift */; };
 		5E9FAFB72C99B190008994B8 /* TabLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFB62C99B190008994B8 /* TabLabelCell.swift */; };
+		5E9FAFC22C9ACBD3008994B8 /* V3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFC02C9ACBD3008994B8 /* V3ViewController.swift */; };
+		5E9FAFC32C9ACBD3008994B8 /* V3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FAFC12C9ACBD3008994B8 /* V3ViewController.xib */; };
+		5E9FAFC52C9ACBEE008994B8 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFC42C9ACBEE008994B8 /* TabContentView.swift */; };
+		5E9FAFCD2C9AF0EC008994B8 /* V4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FAFCB2C9AF0EC008994B8 /* V4ViewController.swift */; };
+		5E9FAFCE2C9AF0EC008994B8 /* V4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FAFCC2C9AF0EC008994B8 /* V4ViewController.xib */; };
 		5EE1F1DD2C98290100A040D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1DC2C98290100A040D9 /* AppDelegate.swift */; };
 		5EE1F1DF2C98290200A040D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1F1DE2C98290200A040D9 /* SceneDelegate.swift */; };
 		5EE1F1E62C98290200A040D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1F1E52C98290200A040D9 /* Assets.xcassets */; };
@@ -32,6 +37,11 @@
 		5E9FAFB02C99B147008994B8 /* V2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = V2ViewController.xib; sourceTree = "<group>"; };
 		5E9FAFB42C99B164008994B8 /* TabCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionView.swift; sourceTree = "<group>"; };
 		5E9FAFB62C99B190008994B8 /* TabLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLabelCell.swift; sourceTree = "<group>"; };
+		5E9FAFC02C9ACBD3008994B8 /* V3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V3ViewController.swift; sourceTree = "<group>"; };
+		5E9FAFC12C9ACBD3008994B8 /* V3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = V3ViewController.xib; sourceTree = "<group>"; };
+		5E9FAFC42C9ACBEE008994B8 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
+		5E9FAFCB2C9AF0EC008994B8 /* V4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V4ViewController.swift; sourceTree = "<group>"; };
+		5E9FAFCC2C9AF0EC008994B8 /* V4ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = V4ViewController.xib; sourceTree = "<group>"; };
 		5EE1F1D92C98290100A040D9 /* TabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE1F1DC2C98290100A040D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE1F1DE2C98290200A040D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +90,25 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5E9FAFBF2C9ACBB6008994B8 /* v3MakeUsable */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FAFC02C9ACBD3008994B8 /* V3ViewController.swift */,
+				5E9FAFC12C9ACBD3008994B8 /* V3ViewController.xib */,
+				5E9FAFC42C9ACBEE008994B8 /* TabContentView.swift */,
+			);
+			path = v3MakeUsable;
+			sourceTree = "<group>";
+		};
+		5E9FAFC62C9AF096008994B8 /* v4UseItWithAddVC */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FAFCB2C9AF0EC008994B8 /* V4ViewController.swift */,
+				5E9FAFCC2C9AF0EC008994B8 /* V4ViewController.xib */,
+			);
+			path = v4UseItWithAddVC;
+			sourceTree = "<group>";
+		};
 		5EE1F1D02C98290100A040D9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +128,8 @@
 		5EE1F1DB2C98290100A040D9 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
+				5E9FAFC62C9AF096008994B8 /* v4UseItWithAddVC */,
+				5E9FAFBF2C9ACBB6008994B8 /* v3MakeUsable */,
 				5E9FAFAE2C99B12E008994B8 /* v2 */,
 				5EE1F1FA2C983D8A00A040D9 /* ViewControllers */,
 				5EE1F1F42C982A9700A040D9 /* Components */,
@@ -202,10 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EE1F1E62C98290200A040D9 /* Assets.xcassets in Resources */,
+				5E9FAFCE2C9AF0EC008994B8 /* V4ViewController.xib in Resources */,
 				5EE1F1FE2C983DA600A040D9 /* Demo1ViewController.xib in Resources */,
 				5EE1F1E92C98290200A040D9 /* Base in Resources */,
 				5EE1F1F32C98299400A040D9 /* HomeViewController.xib in Resources */,
 				5EE1F2022C983DB300A040D9 /* Demo2ViewController.xib in Resources */,
+				5E9FAFC32C9ACBD3008994B8 /* V3ViewController.xib in Resources */,
 				5E9FAFB22C99B147008994B8 /* V2ViewController.xib in Resources */,
 				5EE1F2062C983DBD00A040D9 /* Demo3ViewController.xib in Resources */,
 			);
@@ -219,11 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9FAFB12C99B147008994B8 /* V2ViewController.swift in Sources */,
+				5E9FAFC22C9ACBD3008994B8 /* V3ViewController.swift in Sources */,
 				5E9FAFB72C99B190008994B8 /* TabLabelCell.swift in Sources */,
 				5EE1F2012C983DB300A040D9 /* Demo2ViewController.swift in Sources */,
 				5EE1F1DD2C98290100A040D9 /* AppDelegate.swift in Sources */,
 				5EE1F1DF2C98290200A040D9 /* SceneDelegate.swift in Sources */,
+				5E9FAFCD2C9AF0EC008994B8 /* V4ViewController.swift in Sources */,
 				5EE1F2052C983DBD00A040D9 /* Demo3ViewController.swift in Sources */,
+				5E9FAFC52C9ACBEE008994B8 /* TabContentView.swift in Sources */,
 				5EE1F1F92C982AF900A040D9 /* TabCell.swift in Sources */,
 				5EE1F1FD2C983DA600A040D9 /* Demo1ViewController.swift in Sources */,
 				5EE1F1F62C982AB200A040D9 /* TabsView.swift in Sources */,
