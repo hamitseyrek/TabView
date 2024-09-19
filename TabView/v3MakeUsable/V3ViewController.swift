@@ -31,9 +31,8 @@ class V3ViewController: UIViewController {
             
             // Initialize tabs
             let tabs = [
-                Tab(icon: UIImage(named: "music"), title: "Music"),
-                Tab(icon: UIImage(named: "movies"), title: "Movies"),
-                Tab(icon: UIImage(named: "books"), title: "Books")
+                Tab(icon: UIImage(named: "music"), title: "Aktif Puanlarınız"),
+                Tab(icon: UIImage(named: "movies"), title: "Geçmiş Puanlarınız")
             ]
             
             tabContentView.configureTabs(tabs: tabs)

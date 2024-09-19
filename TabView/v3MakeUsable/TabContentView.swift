@@ -52,44 +52,23 @@ class TabContentView: UIView, UICollectionViewDataSource, UICollectionViewDelega
         // Configure TabsView
         tabsView.titleColor = .white
         tabsView.iconColor = .white
-        tabsView.indicatorColor = .white
+        tabsView.indicatorColor = UIColor(hexString: "490E6F")
         tabsView.titleFont = UIFont.systemFont(ofSize: 18, weight: .semibold) // Adjust font size if needed
-        tabsView.collectionView.backgroundColor = .cyan
+        tabsView.collectionView.backgroundColor = .clear
         tabsView.delegate = self
         
         // Configure CollectionView
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        setupTabs()
         
     }
-    func setupTabs() {
-        // Add Tabs (Set 'icon'to nil if you don't want to have icons)
-        tabsView.tabs = [
-            Tab(icon: UIImage(named: "music"), title: "Music"),
-            Tab(icon: UIImage(named: "movies"), title: "Movies"),
-            Tab(icon: UIImage(named: "books"), title: "Books")
-        ]
-        
-        // Set TabMode to '.fixed' for stretched tabs in full width of screen or '.scrollable' for scrolling to see all tabs
-        tabsView.tabMode = .fixed
-        
-        // TabView Customization
-        tabsView.titleColor = .white
-        tabsView.iconColor = .white
-        tabsView.indicatorColor = .white
-        tabsView.titleFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        tabsView.collectionView.backgroundColor = .cyan
-        
-        // Set TabsView Delegate
-        tabsView.delegate = self
-        
-        // Set the selected Tab when the app starts
-        tabsView.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
-    }
+    
     func configureTabs(tabs: [Tab]) {
         tabsView.tabs = tabs
+        
+//         Set TabMode to '.fixed' for stretched tabs in full width of screen or '.scrollable' for scrolling to see all tabs
+        tabsView.tabMode = .fixed
         tabsView.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
         collectionView.reloadData()
     }

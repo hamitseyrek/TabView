@@ -21,17 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEW-P1-hJc">
-                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <rect key="frame" x="16" y="89" width="361" height="699"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fEW-P1-hJc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CxF-za-RNO"/>
-                <constraint firstAttribute="bottom" secondItem="fEW-P1-hJc" secondAttribute="bottom" id="Q7C-AJ-oJK"/>
-                <constraint firstItem="fEW-P1-hJc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RjS-1Z-xJ2"/>
-                <constraint firstItem="fEW-P1-hJc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hxl-pL-qZV"/>
+                <constraint firstItem="fEW-P1-hJc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Cwx-8r-3kl"/>
+                <constraint firstItem="fEW-P1-hJc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="ehv-01-evf"/>
+                <constraint firstItem="fEW-P1-hJc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="jdU-Tn-jFR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fEW-P1-hJc" secondAttribute="bottom" constant="30" id="vHD-Wy-6yd"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>

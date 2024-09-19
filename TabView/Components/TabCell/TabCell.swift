@@ -13,19 +13,24 @@ class TabCell: UICollectionViewCell {
     
     var tabIcon: UIImageView!
     
-    var indicatorView: UIView!
-    
-    var indicatorColor: UIColor = .black
+//    var indicatorView: UIView!
+    private let indicatorView: UIView = {
+        let view = UIView()
+//        view.layer.cornerRadius = 5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    var indicatorColor: UIColor = UIColor(hexString: "490E6F")
     
     override var isSelected: Bool {
         didSet {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.3) {
-                    // Seçili durumdayken background rengi ve diğer stiller kırmızı olsun
-                    self.indicatorView.backgroundColor = self.isSelected ? .red : UIColor.clear
-                    self.tabTitle.textColor = self.isSelected ? .white : .black // Yazı rengi
+                    self.indicatorView.backgroundColor = self.isSelected ? self.indicatorColor : UIColor.clear
+                    self.tabTitle.textColor = UIColor(hexString: "490E6F") // self.isSelected ? .white : .black
                     self.tabIcon.tintColor = self.isSelected ? .white : .black // İkon rengi
-                    self.backgroundColor = self.isSelected ? .red : .clear // Arka plan rengi
+                    self.backgroundColor = self.isSelected ? UIColor(hexString: "F5EAFD") : .clear
                     self.layoutIfNeeded()
                 }
             }
@@ -89,12 +94,12 @@ class TabCell: UICollectionViewCell {
     }
     
     func setupIndicatorView() {
-        indicatorView = UIView()
+//        indicatorView = UIView()
         addSubview(indicatorView)
 
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            indicatorView.heightAnchor.constraint(equalToConstant: 0), // for animation for selected
+            indicatorView.heightAnchor.constraint(equalToConstant: 3), // for animation for selected
             indicatorView.widthAnchor.constraint(equalTo: self.widthAnchor),
             indicatorView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
